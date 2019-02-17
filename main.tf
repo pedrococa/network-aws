@@ -17,7 +17,8 @@ resource "aws_subnet" "public" {
   count = "${var.create ? length(var.vpc_cidrs_public) : 0}"
 
   # TODO: Workaround for https://github.com/hashicorp/terraform/issues/11210, remove concat once issue #11210 is fixed
-  vpc_id                  = "${var.create_vpc ? element(concat(aws_vpc.main.*.id, list("")), 0) : var.vpc_id}" # TODO: Workaround for issue #11210
+  # vpc_id                  = "${var.create_vpc ? element(concat(aws_vpc.main.*.id, list("")), 0) : var.vpc_id}" # TODO: Workaround for issue #11210
+  vpc_id                  = "PTFE-Demo-VPC"
   availability_zone       = "${element(data.aws_availability_zones.main.names, count.index)}"
   cidr_block              = "${element(var.vpc_cidrs_public, count.index)}"
   map_public_ip_on_launch = true
