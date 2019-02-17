@@ -140,8 +140,8 @@ module "ssh_keypair_aws" {
   # https://github.com/hashicorp/terraform/issues/4149
   # https://github.com/hashicorp/terraform/issues/10857
   # https://github.com/hashicorp/terraform/issues/13980
-  create = "${var.create && var.ssh_key_name != "" && var.bastion_count > 0 ? 1 : 0}" # TODO: Uncomment once issue #4149 is resolved
-  # create = "${var.create && !var.ssh_key_override && var.bastion_count > 0 ? 1 : 0}" # TODO: Remove once issue #4149 is resolved
+  # create = "${var.create && var.ssh_key_name != "" && var.bastion_count > 0 ? 1 : 0}" # TODO: Uncomment once issue #4149 is resolved
+  create = "${var.create && !var.ssh_key_override && var.bastion_count > 0 ? 1 : 0}" # TODO: Remove once issue #4149 is resolved
   name   = "${var.name}"
 }
 

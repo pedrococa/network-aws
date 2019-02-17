@@ -5,7 +5,7 @@ variable "create" {
 
 variable "name" {
   description = "Name for resources, defaults to \"network-aws\"."
-  default     = "network-aws"
+  default     = "my-network-aws"
 }
 
 variable "create_vpc" {
