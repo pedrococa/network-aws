@@ -10,12 +10,12 @@ variable "name" {
 
 variable "create_vpc" {
   description = "Determines whether a VPC should be created or if a VPC ID will be passed in."
-  default     = true
+  default     = false
 }
 
 variable "vpc_id" {
   description = "VPC ID to override, must be entered if \"create_vpc\" is false."
-  default     = ""
+  default     = "network-aws"
 }
 
 variable "vpc_cidr" {
